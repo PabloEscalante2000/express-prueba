@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/main.css")
+    body 
+        header.main-header
+            nav.main-header__nav 
+                ul 
+                    li 
+                        a.active(href="/") Shop 
+                    li 
+                        a(href="admin/add-product") Add Product
+
+        main 
+            if prods.length > 0
+                div 
+                    each product in prods
+                        header 
+                            h1 #{product.title}
+                        .card-content 
+                            h2 $19.99
+                            p description 
+                        button Add to cart
+            else 
+                h1 NO PRODUCTS
